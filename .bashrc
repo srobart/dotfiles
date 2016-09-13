@@ -20,6 +20,9 @@ export ftp_proxy=$http_proxy
 export rsync_proxy=$http_proxy
 export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
+# for ccache
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
 # aliases
 alias aurupdate='yaourt -Sbu --aur'
 alias bb='sudo bleachbit --clean system.cache system.localizations system.trash system.tmp &&  sudo cacheclean 2'
@@ -27,7 +30,7 @@ alias pacman='sudo pacman'
 alias update='sudo pacman -Syy'
 alias upgrade='sudo pacman -Syu'
 alias grep='grep --color=auto'
-alias ls='ls --group-directories-first --color'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias rm='rm -i'
@@ -40,19 +43,18 @@ alias nano='nano -w'
 alias otherhome='sudo mount -t btrfs -o compress=lzo,autodefrag,ssd,noatime /dev/sdb1 /home/baron/data'
 alias install='pacaur -S'
 #alias build='pacbuilder -Sbkvn'
-alias build='pacaur -Sb'
+alias build='sudo abs'
 #alias mirrorselect='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
-#alias defrag='sudo find / -xdev -type f -print -exec btrfs filesystem defrag '{}' \;'
-#alias defraghome='sudo find /home -xdev -type f -print -exec btrfs filesystem defrag '{}' \;'
+alias defrag='sudo find / -xdev -type f -print -exec btrfs filesystem defrag '{}' \;'
+alias defraghome='sudo find /home -xdev -type f -print -exec btrfs filesystem defrag '{}' \;'
 alias gource='pacmanlog2gource -f'
-alias wondershaperon='sudo wondershaper -a enp6s0 -d 6200 -u 384'
+alias wondershaperon='sudo wondershaper -a enp4s0 -d 6200 -u 384'
 alias wondershaperoff='sudo killall wondershaper'
-#alias recentupgrades='expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -100'
+#alias recentupgrades='expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -50'
 alias downgrade='sudo downgrade'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias wow='WINEDEBUG=-all __GL_THREADED_OPTIMIZATIONS=1 wine /home/baron/.wine/drive_c/Program\ Files/World\ of\ Warcraft/Wow.exe -opengl $> /dev/null'
+alias traffic='sudo tc qdisc add dev enp6s0 root tbf rate 500kbit latency'
+alias servogpu='servo -M -g -t 12'
+alias cachestatus='ccache -s'
 
 # Is this an SSH session? Yes=>Show Hostname
 #if [ -n "$SSH_TTY" ] || [ -n "$SUDO_USER" ] ; then
