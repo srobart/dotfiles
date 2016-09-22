@@ -55,6 +55,9 @@ alias downgrade='sudo downgrade'
 alias traffic='sudo tc qdisc add dev enp6s0 root tbf rate 500kbit latency'
 alias servogpu='servo -M -g -t 12'
 alias cachestatus='ccache -s'
+alias pacgraph='pacgraph -f /home/baron/Documents/pacgraph'
+alias performance='sudo cpupower frequency-set -g performance'
+alias ondemand='sudo cpupower frequency-set -g ondemand'
 
 # Is this an SSH session? Yes=>Show Hostname
 #if [ -n "$SSH_TTY" ] || [ -n "$SUDO_USER" ] ; then
