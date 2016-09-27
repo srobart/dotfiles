@@ -14,17 +14,17 @@ export PROMPT_COMMAND="history -a ; ${PROMPT_COMMAND:-:}"
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 
-export http_proxy=http://127.0.0.1:8123/
+export http_proxy=http://127.0.0.1:3128/
 export https_proxy=$http_proxy
 export ftp_proxy=$http_proxy
 export rsync_proxy=$http_proxy
 export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
 # for ccache
-export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="/usr/lib/ccache/bin/:/home/baron/bin/:$PATH"
 
 # aliases
-alias aurupdate='yaourt -Sbu --aur'
+alias aurupdate='pacaur -SQyu'
 alias bb='sudo bleachbit --clean system.cache system.localizations system.trash system.tmp &&  sudo cacheclean 2'
 alias pacman='sudo pacman'
 alias update='sudo pacman -Syy'
@@ -58,6 +58,9 @@ alias cachestatus='ccache -s'
 alias pacgraph='pacgraph -f /home/baron/Documents/pacgraph'
 alias performance='sudo cpupower frequency-set -g performance'
 alias ondemand='sudo cpupower frequency-set -g ondemand'
+alias free='free -h'
+alias nocomment='egrep -v "^\s*(#|$)"'
+alias dirsize='du -h --max-depth=1 | sort -hr'
 
 # Is this an SSH session? Yes=>Show Hostname
 #if [ -n "$SSH_TTY" ] || [ -n "$SUDO_USER" ] ; then
@@ -66,4 +69,4 @@ alias ondemand='sudo cpupower frequency-set -g ondemand'
 
 archey3
 
-
+fortune
