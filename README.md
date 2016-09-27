@@ -4,4 +4,6 @@ This is where I keep my conky and .bashrc.  To use them, simply download to your
 
 The conky file shows system info, CPU load and temp (using lm_sensors) for 12 CPU cores (comment out if you have fewer cores), GPU temperature for 2 Nvidia GPUs (comment the second one out if you only run 1 GPU), 10 CPU processes, 10 memory processes, 1 network interface (the name of your interface may be different than mine), upload/download/totals, public/lan ip address, inbound/outbound ports and free/total for /home, /, /tmp and /tmpfs (you can set this up however you want it, to monitor whichever drives are on your computer, but some editing will be necessary).  The synax is pretty straightforward, just tailor it to your system, it shouldn't take more than a couple of minutes.
 
+bin.tar.xz is a small collection of scripts that I keep in my /home/user/bin directory, they're just things that I find handy to have, perhaps you will too.
+
 Thanks for stopping by.
